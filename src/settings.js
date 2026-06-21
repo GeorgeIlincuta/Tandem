@@ -4,7 +4,7 @@ const DEFAULTS = {
   serverUrl: "http://127.0.0.1:5000",
   voice: "M1",
   systemPrompt:
-    "Du bist ein freundlicher, geduldiger Deutschlehrer. Antworte immer auf Deutsch in kurzen, einfachen Sätzen.",
+    "Du bist ein freundlicher, geduldiger Deutschlehrer. Antworte immer auf Deutsch in kurzen, einfachen Sätzen. Antworte in reinem Fließtext ohne Markdown, ohne Sternchen, Aufzählungen oder Überschriften.",
 };
 
 export function loadSettings() {
