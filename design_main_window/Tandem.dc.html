@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  ::-webkit-scrollbar{width:9px;}
+  ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.08);border-radius:5px;border:2px solid transparent;background-clip:padding-box;}
+  ::-webkit-scrollbar-track{background:transparent;}
+  @keyframes tdm-ring{0%{box-shadow:0 0 0 0 rgba(229,72,77,0.45);}70%{box-shadow:0 0 0 12px rgba(229,72,77,0);}100%{box-shadow:0 0 0 0 rgba(229,72,77,0);}}
+  @keyframes tdm-wave{0%,100%{transform:scaleY(0.35);}50%{transform:scaleY(1);}}
+  @keyframes tdm-dot{0%,80%,100%{opacity:0.25;}40%{opacity:1;}}
+</style>
+</helmet>
+
+<div style="width:max-content;min-width:100%;min-height:100vh;box-sizing:border-box;padding:56px;background:#d8d9dc;font-family:'Hanken Grotesk',-apple-system,sans-serif;">
+
+  <div style="margin-bottom:36px;max-width:760px;">
+    <div style="font-size:22px;font-weight:700;letter-spacing:-0.02em;color:#1a1b1d;">Tandem — main window</div>
+    <div style="font-size:14px;line-height:1.5;color:#62646a;margin-top:6px;">German conversation practice · Windows desktop (Tauri). Dark, utilitarian. The record bar across its three states.</div>
+  </div>
+
+  <div style="display:flex;gap:56px;align-items:flex-start;">
+
+    <!-- ============ FRAME 1: READY ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:#74767c;margin-bottom:14px;">01 · ready</div>
+      <div style="width:760px;height:820px;background:#1e1e24;border:1px solid rgba(255,255,255,0.08);border-radius:11px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 70px -24px rgba(0,0,0,0.6),0 4px 14px rgba(0,0,0,0.3);">
+
+        <!-- titlebar -->
+        <div style="height:36px;flex:none;display:flex;align-items:center;justify-content:flex-end;padding:0 14px;gap:20px;background:#191920;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <svg width="11" height="11" stroke="#6b7079" stroke-width="1.2"><line x1="1" y1="6" x2="10" y2="6"/></svg>
+          <svg width="11" height="11" fill="none" stroke="#6b7079" stroke-width="1.1"><rect x="1.5" y="1.5" width="8" height="8" rx="1"/></svg>
+          <svg width="11" height="11" stroke="#6b7079" stroke-width="1.2"><line x1="2" y1="2" x2="9" y2="9"/><line x1="9" y1="2" x2="2" y2="9"/></svg>
+        </div>
+
+        <!-- app header -->
+        <div style="height:56px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#e9eaec;">Tandem</span>
+            <span style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></span>
+            <span style="display:flex;align-items:center;gap:7px;">
+              <span style="width:7px;height:7px;border-radius:50%;background:#42c97a;box-shadow:0 0 8px rgba(66,201,122,0.5);"></span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8b9099;">ready</span>
+            </span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button style="display:flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:7px;background:transparent;color:#c4c8cd;font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;">
+              <svg width="12" height="12" stroke="#c4c8cd" stroke-width="1.4"><line x1="6" y1="1.5" x2="6" y2="10.5"/><line x1="1.5" y1="6" x2="10.5" y2="6"/></svg>
+              New
+            </button>
+            <button style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.1);border-radius:7px;background:transparent;cursor:pointer;">
+              <svg width="15" height="15" fill="none" stroke="#c4c8cd" stroke-width="1.3">
+                <line x1="1" y1="4.5" x2="14" y2="4.5"/><circle cx="10" cy="4.5" r="2" fill="#1e1e24"/>
+                <line x1="1" y1="10.5" x2="14" y2="10.5"/><circle cx="5" cy="10.5" r="2" fill="#1e1e24"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- transcript -->
+        <div style="flex:1;overflow-y:auto;padding:26px 26px 22px;display:flex;flex-direction:column;gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#7a7870;max-width:600px;">Guten Tag! Worüber möchtest du heute sprechen?</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6b7079;">Du</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#a09e95;max-width:600px;">Hallo! Ich möchte über meinen Urlaub in Wien erzählen.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#7a7870;max-width:600px;">Schön! Was hast du dort gemacht, und was hat dir am besten gefallen?</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6b7079;">Du</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#a09e95;max-width:600px;">Ich habe Schloss Schönbrunn besucht und viel Kaffee getrunken. Der Melange war mein Favorit.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#7a7870;max-width:600px;">Wien ist berühmt für seine Kaffeehäuser. Die Melange passt wunderbar zu einem Stück Sachertorte — hast du das probiert?</div>
+          </div>
+        </div>
+
+        <!-- record bar -->
+        <div style="flex:none;height:140px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:0 18px;background:#191920;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#5c6066;height:16px;">press to speak</div>
+          <button style="width:62px;height:62px;border-radius:50%;background:#14161a;border:1px solid rgba(255,255,255,0.12);display:flex;align-items:center;justify-content:center;cursor:pointer;">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+              <rect x="7" y="2" width="6" height="10" rx="3" fill="#cdb487"/>
+              <path d="M4.2 9.4a5.8 5.8 0 0 0 11.6 0" stroke="#cdb487" stroke-width="1.5"/>
+              <line x1="10" y1="15.2" x2="10" y2="18" stroke="#cdb487" stroke-width="1.5"/>
+              <line x1="6.6" y1="18" x2="13.4" y2="18" stroke="#cdb487" stroke-width="1.5"/>
+            </svg>
+          </button>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;color:#74767c;height:14px;">Record</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FRAME 2: RECORDING ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:#74767c;margin-bottom:14px;">02 · recording</div>
+      <div style="width:760px;height:820px;background:#1e1e24;border:1px solid rgba(255,255,255,0.08);border-radius:11px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 70px -24px rgba(0,0,0,0.6),0 4px 14px rgba(0,0,0,0.3);">
+        <div style="height:36px;flex:none;display:flex;align-items:center;justify-content:flex-end;padding:0 14px;gap:20px;background:#191920;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <svg width="11" height="11" stroke="#6b7079" stroke-width="1.2"><line x1="1" y1="6" x2="10" y2="6"/></svg>
+          <svg width="11" height="11" fill="none" stroke="#6b7079" stroke-width="1.1"><rect x="1.5" y="1.5" width="8" height="8" rx="1"/></svg>
+          <svg width="11" height="11" stroke="#6b7079" stroke-width="1.2"><line x1="2" y1="2" x2="9" y2="9"/><line x1="9" y1="2" x2="2" y2="9"/></svg>
+        </div>
+        <div style="height:56px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#e9eaec;">Tandem</span>
+            <span style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></span>
+            <span style="display:flex;align-items:center;gap:7px;">
+              <span style="width:7px;height:7px;border-radius:50%;background:#42c97a;box-shadow:0 0 8px rgba(66,201,122,0.5);"></span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8b9099;">ready</span>
+            </span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button style="display:flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:7px;background:transparent;color:#c4c8cd;font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;">
+              <svg width="12" height="12" stroke="#c4c8cd" stroke-width="1.4"><line x1="6" y1="1.5" x2="6" y2="10.5"/><line x1="1.5" y1="6" x2="10.5" y2="6"/></svg>
+              New
+            </button>
+            <button style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.1);border-radius:7px;background:transparent;cursor:pointer;">
+              <svg width="15" height="15" fill="none" stroke="#c4c8cd" stroke-width="1.3">
+                <line x1="1" y1="4.5" x2="14" y2="4.5"/><circle cx="10" cy="4.5" r="2" fill="#1e1e24"/>
+                <line x1="1" y1="10.5" x2="14" y2="10.5"/><circle cx="5" cy="10.5" r="2" fill="#1e1e24"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:26px 26px 22px;display:flex;flex-direction:column;gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#7a7870;max-width:600px;">Schön! Was hast du dort gemacht, und was hat dir am besten gefallen?</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6b7079;">Du</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#a09e95;max-width:600px;">Ich habe Schloss Schönbrunn besucht und viel Kaffee getrunken. Der Melange war mein Favorit.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#7a7870;max-width:600px;">Wien ist berühmt für seine Kaffeehäuser. Die Melange passt wunderbar zu einem Stück Sachertorte — hast du das probiert?</div>
+          </div>
+        </div>
+        <!-- record bar: recording -->
+        <div style="flex:none;height:140px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;padding:0 18px;background:#191920;">
+          <div style="display:flex;align-items:center;justify-content:center;gap:3px;height:24px;">
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.12s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.05s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.28s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.18s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.4s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.22s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.5s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.33s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.6s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.45s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.7s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.55s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.36s;"></span>
+            <span style="width:2.5px;height:20px;background:#e5484d;border-radius:2px;display:inline-block;transform-origin:center;animation:tdm-wave 0.9s ease-in-out infinite;animation-delay:0.15s;"></span>
+          </div>
+          <button style="width:62px;height:62px;border-radius:50%;background:#e5484d;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;animation:tdm-ring 1.6s ease-out infinite;">
+            <span style="width:18px;height:18px;border-radius:4px;background:#fff;display:inline-block;"></span>
+          </button>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;color:#e5848a;height:14px;">listening · 0:06 · Stop</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ FRAME 3: THINKING ============ -->
+    <div style="flex:none;display:flex;flex-direction:column;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:0.06em;text-transform:uppercase;color:#74767c;margin-bottom:14px;">03 · thinking</div>
+      <div style="width:760px;height:820px;background:#1e1e24;border:1px solid rgba(255,255,255,0.08);border-radius:11px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 70px -24px rgba(0,0,0,0.6),0 4px 14px rgba(0,0,0,0.3);">
+        <div style="height:36px;flex:none;display:flex;align-items:center;justify-content:flex-end;padding:0 14px;gap:20px;background:#191920;border-bottom:1px solid rgba(255,255,255,0.05);">
+          <svg width="11" height="11" stroke="#6b7079" stroke-width="1.2"><line x1="1" y1="6" x2="10" y2="6"/></svg>
+          <svg width="11" height="11" fill="none" stroke="#6b7079" stroke-width="1.1"><rect x="1.5" y="1.5" width="8" height="8" rx="1"/></svg>
+          <svg width="11" height="11" stroke="#6b7079" stroke-width="1.2"><line x1="2" y1="2" x2="9" y2="9"/><line x1="9" y1="2" x2="2" y2="9"/></svg>
+        </div>
+        <div style="height:56px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 18px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <div style="display:flex;align-items:center;gap:14px;">
+            <span style="font-size:15px;font-weight:600;letter-spacing:-0.01em;color:#e9eaec;">Tandem</span>
+            <span style="width:1px;height:16px;background:rgba(255,255,255,0.1);"></span>
+            <span style="display:flex;align-items:center;gap:7px;">
+              <span style="width:7px;height:7px;border-radius:50%;background:#42c97a;box-shadow:0 0 8px rgba(66,201,122,0.5);"></span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8b9099;">ready</span>
+            </span>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button style="display:flex;align-items:center;gap:7px;padding:6px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:7px;background:transparent;color:#c4c8cd;font-size:13px;font-weight:500;font-family:inherit;cursor:pointer;">
+              <svg width="12" height="12" stroke="#c4c8cd" stroke-width="1.4"><line x1="6" y1="1.5" x2="6" y2="10.5"/><line x1="1.5" y1="6" x2="10.5" y2="6"/></svg>
+              New
+            </button>
+            <button style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.1);border-radius:7px;background:transparent;cursor:pointer;">
+              <svg width="15" height="15" fill="none" stroke="#c4c8cd" stroke-width="1.3">
+                <line x1="1" y1="4.5" x2="14" y2="4.5"/><circle cx="10" cy="4.5" r="2" fill="#1e1e24"/>
+                <line x1="1" y1="10.5" x2="14" y2="10.5"/><circle cx="5" cy="10.5" r="2" fill="#1e1e24"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div style="flex:1;overflow-y:auto;padding:26px 26px 22px;display:flex;flex-direction:column;gap:24px;">
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#7a7870;max-width:600px;">Wien ist berühmt für seine Kaffeehäuser. Die Melange passt wunderbar zu einem Stück Sachertorte — hast du das probiert?</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:7px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#6b7079;">Du</div>
+            <div style="font-size:15.5px;line-height:1.6;color:#a09e95;max-width:600px;">Ja! Die Sachertorte war wirklich fantastisch. Aber sie war ein bisschen zu süß für mich.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:9px;">
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.1em;text-transform:uppercase;color:#bfa06a;">Tutor</div>
+            <div style="display:flex;align-items:center;gap:5px;height:18px;">
+              <span style="width:6px;height:6px;border-radius:50%;background:#bfa06a;display:inline-block;animation:tdm-dot 1.2s ease-in-out infinite;animation-delay:0s;"></span>
+              <span style="width:6px;height:6px;border-radius:50%;background:#bfa06a;display:inline-block;animation:tdm-dot 1.2s ease-in-out infinite;animation-delay:0.18s;"></span>
+              <span style="width:6px;height:6px;border-radius:50%;background:#bfa06a;display:inline-block;animation:tdm-dot 1.2s ease-in-out infinite;animation-delay:0.36s;"></span>
+            </div>
+          </div>
+        </div>
+        <!-- record bar: thinking -->
+        <div style="flex:none;height:140px;border-top:1px solid rgba(255,255,255,0.06);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:0 18px;background:#191920;">
+          <div style="display:flex;align-items:center;gap:7px;height:16px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#8b9099;">thinking</span>
+            <span style="display:flex;align-items:center;gap:3px;">
+              <span style="width:4px;height:4px;border-radius:50%;background:#8b9099;display:inline-block;animation:tdm-dot 1.2s ease-in-out infinite;animation-delay:0s;"></span>
+              <span style="width:4px;height:4px;border-radius:50%;background:#8b9099;display:inline-block;animation:tdm-dot 1.2s ease-in-out infinite;animation-delay:0.18s;"></span>
+              <span style="width:4px;height:4px;border-radius:50%;background:#8b9099;display:inline-block;animation:tdm-dot 1.2s ease-in-out infinite;animation-delay:0.36s;"></span>
+            </span>
+          </div>
+          <button style="width:62px;height:62px;border-radius:50%;background:#14161a;border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;cursor:not-allowed;opacity:0.38;">
+            <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+              <rect x="7" y="2" width="6" height="10" rx="3" fill="#cdb487"/>
+              <path d="M4.2 9.4a5.8 5.8 0 0 0 11.6 0" stroke="#cdb487" stroke-width="1.5"/>
+              <line x1="10" y1="15.2" x2="10" y2="18" stroke="#cdb487" stroke-width="1.5"/>
+              <line x1="6.6" y1="18" x2="13.4" y2="18" stroke="#cdb487" stroke-width="1.5"/>
+            </svg>
+          </button>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.05em;color:#4f5358;height:14px;">generating reply…</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+</body>
+</html>
