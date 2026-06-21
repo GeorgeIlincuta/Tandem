@@ -4,10 +4,15 @@ A Tauri (v2) Windows desktop app for **practising spoken German**. Record from
 your laptop mic, and an LLM "tutor" replies in spoken German, using the local
 Converse API.
 
+> **Requires the Converse API backend.** This app is just the frontend — it does
+> nothing on its own. You must have the [Converse API](https://github.com/GeorgeIlincuta/Converse)
+> running locally (it handles speech-to-text, the LLM tutor, and text-to-speech).
+
 ## Requirements
 
-- The **Converse API** running locally with `GET /health` showing `whisper`,
-  `llm`, and `tts` all `true` (LM Studio running with a German-capable model).
+- The **[Converse API](https://github.com/GeorgeIlincuta/Converse)** running
+  locally with `GET /health` showing `whisper`, `llm`, and `tts` all `true`
+  (LM Studio running with a German-capable model).
 - **Rust** toolchain + **Tauri CLI v2** (`cargo install tauri-cli --version "^2.0"`)
   and the Microsoft C++ Build Tools / WebView2 (preinstalled on Windows 11).
 
