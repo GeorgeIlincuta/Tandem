@@ -48,8 +48,8 @@ anyway.)
 
 ## Architecture
 
-New Tauri v2 app in a **separate folder** (proposed `C:\LOCAL FILES\Claude Code\Tauri\tandem-live` —
-name to confirm). The existing `tandem` .NET-backed app is left intact as a reference/fallback.
+New Tauri v2 app in a **separate folder**: `C:\LOCAL FILES\Claude Code\Tauri\TandemLive`.
+The existing `tandem` .NET-backed app is left intact as a reference/fallback.
 
 The **frontend is reused** from `tandem` (high-fidelity UI, frameless transparent window,
 custom titlebar, bundled fonts). Only the plumbing behind it changes: from `window.__TAURI__.http.fetch`
@@ -187,6 +187,7 @@ Detailed task breakdown comes from the writing-plans step; high-level order:
 
 ## Open decisions to confirm
 
-1. **New folder name** — default `tandem-live` (sibling of `tandem`). Override if you prefer.
+1. ~~New folder name~~ — **locked: `C:\LOCAL FILES\Claude Code\Tauri\TandemLive`**.
 2. **GPU backend for Whisper** — CUDA vs. Vulkan build feature (Supertonic uses ORT DirectML
-   regardless). Default: whichever builds cleanest, CPU fallback always on.
+   regardless). Default: whichever builds cleanest, CPU fallback always on. (Resolve during
+   the STT build phase.)
